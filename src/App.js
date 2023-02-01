@@ -15,9 +15,13 @@ function App() {
         })
     }
 
+    const removeUsersHandler = () => {
+        setUsersList([])
+    }
+
     return (
         <Fragment>
-            <AddUser onAddUser={addUserHandler}/>
+            <AddUser onAddUser={addUserHandler} onRemoveUsers={removeUsersHandler}/>
             {usersList.length && <UsersList users={usersList}/>}
         </Fragment>
     );
